@@ -1,0 +1,23 @@
+{
+  "name": "escola-api",
+  "version": "1.0.0",
+  "description": "Projeto para fins didaticos ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoOrelio/School-Managment.git"
+  },
+  "author": "Gustavo Orelio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoOrelio/School-Managment/issues"
+  },
+  "homepage": "https://github.com/GustavoOrelio/School-Managment#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
