@@ -1,6 +1,6 @@
 var counter = 0;
 
-module.exports = class counterService{
+module.exports = class CounterService{
     static getCounter(){
         return {counter: counter}
     }
@@ -9,4 +9,12 @@ module.exports = class counterService{
         counter ++;
         return {counter: counter}
     }
+
+    static decrement(){
+        if (counter >=1 ){
+            counter --;
+        }
+        return {counter: counter}
+    }
 }
+

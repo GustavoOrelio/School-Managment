@@ -1,8 +1,9 @@
-const counterController = require("../controllers/counterControllers")
+const CounterController = require("../controllers/CounterControllers")
 
-module.exports = class counterRoute{
+module.exports = class CounterRoute{
     constructor(app){
-        app.route("/counter").get(counterController.getCounter);
-        app.route("/counter/increment").post(counterController.increment);
+        app.route("/counter").get(CounterController.getCounter);
+        app.route("/counter/increment").post(CounterController.increment);
+        app.route("/counter/decrement").post(CounterController.decrement);
     }
 }
