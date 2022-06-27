@@ -1,7 +1,12 @@
-const counter = 0;
+var counter = 0;
 
-module.exports = class CounterService{
+module.exports = class counterService{
     static getCounter(){
+        return {counter: counter}
+    }
+
+    static increment(){
+        counter ++;
         return {counter: counter}
     }
 }

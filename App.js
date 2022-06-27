@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { json } = require("express");
-const CounterRoute = require("./routes/CounterRoute")
+const CounterRoute = require("./routes/counterRoute")
 const porta = process.env.PORT || 3000;
 
 var contador = 1;
