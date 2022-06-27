@@ -1,36 +1,43 @@
-"use strict";
-
 const express = require("express");
 const cors = require("cors");
+const { json } = require("express");
+const CounterRoute = require("./routes/CounterRoute")
+const porta = process.env.PORT || 3000;
+
+var contador = 1;
 
 class App {
-  static async init() {
-    let app = new express();
-    app.use(express.json());
-    app.use(cors());
+    static async init() {
+        let app = new express();
+        app.use(cors());
+        app.use(express.json());
 
-    app.get("/", (req, res) => {
-      res.json({
-        name: "escola-api",
-        version: "1.0.0",
-        description: "Projeto para fins didaticos",
-        author: "Gustavo Orelio",
-      });
-    });
-    app.get("/ping", (req, res) => {
-      res.json({"Resposta": "pong"});
-    });
+        app.get("/", (req, res) => {
+            res.json({
+                name: "School-Managment",
+                version: "1.0.0",
+                description: "Projeto para fins didáticos",
+                author: "Gustavo Orelio"
+            })
+        })
 
-    app.get("/contador", (req, res) => {
-      res.json({"Contador": "0"});
-    });
+        app.get("/ping", (req, res)=>{
+            res.json({"Resposta":"pong"})
+        })
 
-    app.get("/incremento", (req, res) => {
-      contador ++;
-      res.json({"Contador": contador});
-    });
+        app.get("/contador", (req, res)=>{
+            res.json({"contador": contador})
+        })
 
-    app.listen(3000);
-  }
+        app.get("/incremento", (req, res)=>{
+            contador ++;
+            res.json({"contador": contador})
+        })
+
+        app.listen(porta, () => {
+            console.log(`Servidor inicializado na porta: ${porta}`)
+        })
+        new CounterRoute(app)
+    }
 }
 App.init();
